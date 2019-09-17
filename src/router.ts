@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Teams from '@/views/Teams.vue'
-import Team from '@/views/Team.vue'
-import Player from '@/views/Player.vue'
+import HomeComponent from './views/Home.vue'
+import TeamsComponent from '@/views/Teams.vue'
+import TeamComponent from '@/views/Team.vue'
+import PlayerComponent from '@/views/Player.vue'
 
 Vue.use(Router)
 
@@ -14,22 +14,22 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: HomeComponent
     },
     {
       path: '/teams',
       name: 'teams',
-      component: Teams
+      component: TeamsComponent
     },    
     {
       path: '/teams/:id',
       name: 'team',
-      component: Team
+      component: TeamComponent
     },
     {
       path: '/players/:id',
       name: 'player',
-      component: Player
+      component: PlayerComponent
     }    
   ]
 })

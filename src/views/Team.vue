@@ -1,9 +1,18 @@
 <template>
     <div>
+        <header>
+            <v-card :color="team.colors.primary.color" tile>
+                <v-container fluid>
+                    <v-img :src="team.logo.altDark.png" width="200" />
+                </v-container>
+                
+            </v-card>
+            <v-sheet :color="team.colors.secondary.color" tile height="10"></v-sheet>
+        </header>
         <span>Team: {{ team.name }}</span>
         <span>Location: {{ team.location }}</span>
 
-        <v-img :src="team.logo.main.png" width="200" />
+        
 
         <div>
             <div v-for="player in team.players" :key="player.id">
@@ -16,6 +25,11 @@
                     <li>number: {{ player.number }}</li>
                     <li>hometown: {{ player.homeLocation }}</li>
                 </ul>
+                <v-btn
+                    :to="{name: 'player', params: {id: player.id}}"
+                    text :color="team.colors.primary.color">
+                    More Info
+                </v-btn>               
             </div>
         </div>
     </div>
@@ -27,7 +41,7 @@ import { Api } from '@/data/Api'
 import { Team } from '@/data/Team'
 
 @Component({components: {  } })
-export default class Teams extends Vue {
+export default class TeamComponent extends Vue {
     private team: Team = new Team();
 
     //Lifecycle hooks

@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import { Team, SocialMediaAccount } from '@/data/Team'
+import { Team, TeamSocialMediaAccount } from '@/data/Team'
 
 @Component
 export default class TeamCard extends Vue{
@@ -56,12 +56,12 @@ export default class TeamCard extends Vue{
         return this.getYoutubAccount().url
     }
 
-    getAccounts () : SocialMediaAccount[] {
+    getAccounts () : TeamSocialMediaAccount[] {
         return this.team.accounts;
     }
 
-    getAccount (accountType: string) : SocialMediaAccount {
-        return <SocialMediaAccount>this.getAccounts().find(a => a.type.toLowerCase() == accountType)
+    getAccount (accountType: string) : TeamSocialMediaAccount {
+        return <TeamSocialMediaAccount>this.getAccounts().find(a => a.type.toLowerCase() == accountType)
     }
 
     getTwitterAccount () {

@@ -9,7 +9,7 @@ export class Team {
     location:               string                  = "";
     players:                TeamPlayer[]            = []; 
     colors:                 TeamColors              = new TeamColors();
-    accounts:               SocialMediaAccount[]    = [];
+    accounts:               TeamSocialMediaAccount[]    = [];
     website:                string                  = "";
 }
 
@@ -31,13 +31,13 @@ export class TeamPlayer{
     name:                   string                  = "";
     fullName:               string                  = "";
     role:                   string                  = "";
-    accounts:               SocialMediaAccount[]    = [];
+    accounts:               TeamSocialMediaAccount[]    = [];
     number:                 number                  = 0;
     headshot:               string                  = "";
     homeLocation:           string                  = "";
 }
 
-export class SocialMediaAccount{
+export class TeamSocialMediaAccount{
     id:                     number                  = 0;
     type:                   string                  = "";
     url:                    string                  = "";

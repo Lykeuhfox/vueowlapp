@@ -10,4 +10,14 @@ export class Api{
         var url = `https://api.overwatchleague.com/v2/teams/${teamId}`
         return Axios.get(url)
     }
+
+    public getAllPlayers() {
+        var url = 'https://api.overwatchleague.com/players'
+        return Axios.get(url)
+    }
+
+    getPlayerById (playerId: number) {
+        var url = `https://api.overwatchleague.com/players/${playerId}`
+        return Axios.get(url)
+    }
 }

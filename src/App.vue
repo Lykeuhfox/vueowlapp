@@ -1,19 +1,20 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-app-bar app dark elevate-on-scroll hide-on-scroll>
+      <router-link to="/">
+        <v-img src="@/assets/owl-logo.jpg" contain max-height="50px" max-width="100" />
+      </router-link>
+      
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>Overwatch</span>
+        <span class="font-weight-light">League</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
+      <v-btn :to="{name: 'teams'}" color="orange" dark>
+          Teams
+      </v-btn>      
     </v-app-bar>
+
 
     <v-content>
       <router-view></router-view>
@@ -22,16 +23,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from 'vue-property-decorator'
+import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 
-export default Vue.extend({
-  name: 'App',
+@Component({
   components: {
-    HelloWorld,
-  },
-  data: () => ({
-    //
-  }),
-});
+    HelloWorld
+  }
+})
+export default class Home extends Vue {}
 </script>
